@@ -1,0 +1,14 @@
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+@use 'sass:math';
+@use 'variables' as *;
+
+// Width (as a percentage) of an element spanning $span grid columns.
+// column-width(1)  -> 8.3333333333%
+// column-width(3)  -> 25%
+// column-width(12) -> 100%
+@function column-width($span: 1) {
+  @return math.percentage(math.div($span, $grid-columns));
+}

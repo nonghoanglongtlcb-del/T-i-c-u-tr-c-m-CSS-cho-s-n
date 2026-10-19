@@ -1,0 +1,88 @@
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Absolutely positioned layer that holds the "page layout" demo.
+.overlay {
+  position: absolute;
+  left: $overlay-left;
+  right: $overlay-right;
+  opacity: $overlay-opacity;
+}
+
+// Faint layer that draws the 12 column guide lines.
+.gridcontainer {
+  &--guide {
+    opacity: $guide-opacity;
+  }
+}
+
+// A horizontal row of the grid.
+.gridwrapper {
+  overflow: auto;
+  position: relative;
+  height: $row-height-default;
+
+  // .gridwrapper--header, --body, --footer, --guide
+  @each $name, $height in $row-heights {
+    &--#{$name} {
+      height: $height;
+    }
+  }
+}
+
+// A single column cell (1 column wide by default).
+.gridcontent {
+  @include column(1);
+  margin: 0;
+  height: 100%;
+  float: left;
+  border-right: $grid-border-width solid $color-border;
+  background-color: $color-cell-bg;
+
+  &--header {
+    @include band($color-header);
+  }
+
+  &--footer {
+    @include band($color-footer);
+  }
+
+  &--cell {
+    @include plain-cell;
+  }
+
+  // Sidebars span 3 of the 12 columns.
+  &--sidebar {
+    @include column(3);
+    padding-top: $sidebar-padding-top;
+  }
+
+  &--guide {
+    background-color: $color-surface;
+    border-right: $grid-border-width solid $color-border-guide;
+
+    &:first-child {
+      border-left: $grid-border-width solid $color-border-guide;
+    }
+  }
+}
+
+// Coloured boxes stacked inside a sidebar.
+.block {
+  width: 100%;
+  height: 15%;
+  margin-bottom: $block-gap;
+  background-color: $color-block;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--tall {
+    height: 92%;
+  }
+}

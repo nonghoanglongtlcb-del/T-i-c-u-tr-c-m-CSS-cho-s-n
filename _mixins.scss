@@ -1,0 +1,24 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+@use 'variables' as *;
+@use 'functions' as *;
+
+// Make an element span $span columns of the grid.
+@mixin column($span: 1) {
+  width: column-width($span);
+}
+
+// A plain white cell without any border.
+@mixin plain-cell {
+  background-color: $color-surface;
+  border: none;
+}
+
+// A full-width coloured band (used for the header and the footer).
+@mixin band($color) {
+  @include column($grid-columns);
+  background-color: $color;
+  border-right-color: transparent;
+}

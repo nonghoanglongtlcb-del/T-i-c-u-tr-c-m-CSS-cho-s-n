@@ -1,0 +1,14 @@
+{
+  "name": "responsive-grid-sass",
+  "version": "1.0.0",
+  "description": "Responsive grid - CSS refactored to SASS",
+  "private": true,
+  "scripts": {
+    "sass": "sass --no-source-map --style=expanded scss/style.scss css/style.css",
+    "sass:watch": "sass --watch --no-source-map --style=expanded scss/style.scss:css/style.css",
+    "sass:min": "sass --no-source-map --style=compressed scss/style.scss css/style.min.css"
+  },
+  "devDependencies": {
+    "sass": "^1.105.2"
+  }
+}

@@ -1,0 +1,36 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+// --- Grid ------------------------------------------------------------------
+$grid-columns: 12;
+$grid-border-width: 1px;
+
+// --- Colors ----------------------------------------------------------------
+$color-border: grey;
+$color-border-guide: #000000;
+$color-cell-bg: #f1f1f1;
+$color-surface: #ffffff;
+$color-header: #9933cc;
+$color-footer: #0099cc;
+$color-block: #33b5e5;
+
+// --- Spacing ---------------------------------------------------------------
+$overlay-left: 8px;
+$overlay-right: 10px;
+$sidebar-padding-top: 15px;
+$block-gap: 10px;
+
+// --- Opacity ---------------------------------------------------------------
+$overlay-opacity: 0.9;
+$guide-opacity: 0.1;
+
+// --- Row heights -----------------------------------------------------------
+$row-height-default: 250px;
+
+$row-heights: (
+  header: 90px,
+  body: 230px,
+  footer: 50px,
+  guide: 370px
+);
